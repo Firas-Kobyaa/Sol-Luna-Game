@@ -1,5 +1,3 @@
-function waterGirl(){
-
     function setup() {
         createCanvas(400, 400); // Create a canvas of size 400x400 pixels
       }
@@ -50,5 +48,5 @@ function waterGirl(){
       }
       
 
-}
+
 
