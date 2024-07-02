@@ -110,3 +110,4 @@ function robot(){
 };
 }
 console.log('bkrahkon')
+console.log('bkrahkon')
