@@ -46,6 +46,7 @@ class FirstScene extends Phaser.Scene{
       this .obstacles.create(550,1040,'fire')
       this .obstacles.create(680,1050,'rd-beside-fire')
 
+
       // Set collision between Watergirl and obstacles
       this.physics.add.collider(this.watergirlSprite, this.obstacles);
 
@@ -69,6 +70,7 @@ class FirstScene extends Phaser.Scene{
         
     }
     update (time,data){
+        
 
     }
 }
