@@ -8,20 +8,36 @@ class FirstScene extends Phaser.Scene{
  
     
     preload (){
-        //loading files needed
-        this.load.image('map','images/space.png')
+        // Background imports
+        this.load.image('map','images/backgrounds/space.png')
 
-        // Load images (replace with your actual image paths)
-        this.load.image('watergirl', 'images/watergirl.png');
-        this.load.image('obstacle-mars', 'images/obstacle-mars.png');
-        this.load.image('starting-road','images/starting-road.png')
-        this.load.image('fire','images/fire.png')
-        this.load.image('rd-beside-fire','images/rd-beside-fire.png')
+        // Main characters
+        this.load.image('watergirl', 'images/main-characters/watergirl.png');
         
+        
+        //road imports;
+        this.load.image('starting-road','images/road/starting-road.png');
+        this.load.image('rd-beside-fire','images/road/rd-beside-fire.png');
 
+        //audio imports
         this.load.audio('music', './audio/music.mp3');
 
+        //icon imports
+        this.load.image('obstacle-mars', 'images/icons/mars.png');
+
+        //obstacle imports
+        this.load.image('fire','images/obstacles/fire-obst.png');
+
+
+
+
+
+
     }
+
+
+
+
     create (data){
 
         
@@ -68,9 +84,29 @@ class FirstScene extends Phaser.Scene{
            
         
     }
+
+
+
+
+
+
+
+
+
+
+
+
     update (time,data){
 
+
+
+
+
+
+
+
     }
+
 }
 
 export default FirstScene
