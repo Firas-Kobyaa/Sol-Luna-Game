@@ -1,3 +1,5 @@
+ //////////    Characters    \\\\\\\\\\\\\\\\
+
 //water girl character function
 const  watergirl = function(){
 
@@ -111,7 +113,7 @@ const robot = function() {
 
 console.log('bkrahkon')
 
-function rambo (){
+const rambo = function(){
   function setup() {
       createCanvas(400, 500);
     }
