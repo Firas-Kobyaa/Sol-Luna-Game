@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+=======
 function waterGirl(){
 
     function setup() {
@@ -169,3 +171,4 @@ function rambo (){
 // Call the rambo function to generate and save the image
 
 
+>>>>>>> main
