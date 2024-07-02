@@ -1,4 +1,5 @@
-function waterGirl(){
+//water girl character function
+const  watergirl = function(){
 
     function setup() {
         createCanvas(400, 400); // Create a canvas of size 400x400 pixels
@@ -56,7 +57,7 @@ function waterGirl(){
 
 // Robot character
 
-function robot(){
+const robot = function() {
 
   function setup() {
    createCanvas(400, 400); // Create a canvas of 400x400 pixels
@@ -110,7 +111,10 @@ function robot(){
 
 console.log('bkrahkon')
 
-function rambo (){
+
+
+// rambo character function
+const rambo = function() {
   function setup() {
       createCanvas(400, 500);
     }
