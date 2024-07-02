@@ -11,6 +11,11 @@ class FirstScene extends Phaser.Scene{
         //loading files needed
         this.load.image('map','images/space.png')
         this.load.audio('music', './audio/music.mp3');
+
+
+
+
+        this.load.audio('music', './audio/firas.mp3');
     }
     create (data){
 
