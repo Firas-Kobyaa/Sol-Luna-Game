@@ -1,6 +1,6 @@
 
 
-import FirstScene from "./firstScene.js";
+import FirstScene from "./scripts/firstScene.js";
 
 const firstScene = new FirstScene()
 // game Scene
