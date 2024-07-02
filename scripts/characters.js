@@ -3,6 +3,7 @@ const  watergirl = function(){
 
     function setup() {
         createCanvas(400, 400); // Create a canvas of size 400x400 pixels
+        saveCanvas('watergirl', 'png');
       }
       
       function draw() {
@@ -44,12 +45,14 @@ const  watergirl = function(){
         rect(x + 20, y + 30, 10, 40, 5); // Right arm
       
         // Left Leg
-        //rect(x - 15, y + 90, 10, 40, 5); // Left leg
+        rect(x - 15, y + 90, 10, 40, 5); // Left leg
       
         // Right Leg
-        //rect(x + 5, y + 90, 10, 40, 5); // Right leg
+        rect(x + 5, y + 90, 10, 40, 5); // Right leg
+
       }
       
+
 
 }
 
@@ -114,7 +117,7 @@ console.log('bkrahkon')
 function rambo (){
   function setup() {
       createCanvas(400, 500);
-    }
+    }s
     
     function draw() {
       background(220);
