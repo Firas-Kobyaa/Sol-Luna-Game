@@ -8,6 +8,7 @@ class FirstScene extends Phaser.Scene{
  
     
     preload (){
+        //loading files needed
         this.load.image('map','images/space.png')
         this.load.audio('music', './audio/music.mp3');
     }
