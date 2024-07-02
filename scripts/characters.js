@@ -54,7 +54,6 @@ function waterGirl(){
 }
 
 
-
 // Robot character
 
 function robot(){
@@ -106,6 +105,5 @@ function robot(){
    rect(140, 400, 50, 20); // Draw left foot (rectangle) at (140, 400) with width 50 and height 20
    rect(210, 400, 50, 20); // Draw right foot (rectangle) at (210, 400) with width 50 and height 20
   }
-
 
 };
