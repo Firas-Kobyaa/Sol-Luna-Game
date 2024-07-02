@@ -1,4 +1,3 @@
-// Water girl character
 function waterGirl(){
 
     function setup() {
@@ -54,6 +53,7 @@ function waterGirl(){
 }
 
 
+
 // Robot character
 
 function robot(){
@@ -107,3 +107,5 @@ function robot(){
   }
 
 };
+
+console.log('bkrahkon')
