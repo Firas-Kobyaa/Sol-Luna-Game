@@ -17,22 +17,43 @@ class FirstScene extends Phaser.Scene{
         
         //road imports;
         this.load.image('starting-road','images/road/starting-road.png');
+        this.load.image('starting-road','images/road/road1.png');
+        this.load.image('starting-road','images/road/road2.png');
+        this.load.image('starting-road','images/road/road3.png');
+        this.load.image('starting-road','images/road/road4.png');
+        this.load.image('starting-road','images/road/road5.png');
+        this.load.image('starting-road','images/road/road6.png');
+        this.load.image('starting-road','images/road/road7.png');
         this.load.image('rd-beside-fire','images/road/rd-beside-fire.png');
+        
 
         //audio imports
         this.load.audio('music', './audio/music.mp3');
 
         //icon imports
         this.load.image('obstacle-mars', 'images/icons/mars.png');
+        this.load.image('obstacle-mars', 'images/icons/fireBase.png');
+        this.load.image('obstacle-mars', 'images/icons/saturn.png');
+        this.load.image('obstacle-mars', 'images/icons/spaceship.png');
+        this.load.image('obstacle-mars', 'images/icons/fireRoad1.png');
+        this.load.image('obstacle-mars', 'images/icons/fireRoad5.png');
+        this.load.image('obstacle-mars', 'images/icons/fireRoad7.png');
+        this.load.image('obstacle-mars', 'images/icons/firework1.png');
+        this.load.image('obstacle-mars', 'images/icons/firework2.png');
+        this.load.image('obstacle-mars', 'images/icons/heart1.png');
+        this.load.image('obstacle-mars', 'images/icons/heart2.png');
+        this.load.image('obstacle-mars', 'images/icons/heart3.png');
+        this.load.image('obstacle-mars', 'images/icons/rocket.png');
+        this.load.image('obstacle-mars', 'images/icons/waterBase1.png');
+        this.load.image('obstacle-mars', 'images/icons/waterBase5.png');
+        this.load.image('obstacle-mars', 'images/icons/waterBase7.png');
+        this.load.image('obstacle-mars', 'images/icons/waterBase.png');
 
         //obstacle imports
         this.load.image('fire','images/obstacles/fire-obst.png');
-
-
-
-
-
-
+        this.load.image('fire','images/obstacles/water-obst.png');
+        this.load.image('fire','images/obstacles/road2-obst.png');
+        this.load.image('fire','images/obstacles/road3-obst.png');
     }
 
 
