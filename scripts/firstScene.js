@@ -13,18 +13,23 @@ class FirstScene extends Phaser.Scene{
 
         // Main characters
         this.load.image('watergirl', 'images/main-characters/watergirl.png');
-        
+        this.load.image('robot', 'images/main-characters/robot.png');
+
+    
         
         //road imports;
         this.load.image('starting-road','images/road/starting-road.png');
-        this.load.image('starting-road','images/road/road1.png');
-        this.load.image('starting-road','images/road/road2.png');
-        this.load.image('starting-road','images/road/road3.png');
-        this.load.image('starting-road','images/road/road4.png');
-        this.load.image('starting-road','images/road/road5.png');
-        this.load.image('starting-road','images/road/road6.png');
-        this.load.image('starting-road','images/road/road7.png');
+        this.load.image('road1','images/road/road1.png');
+        this.load.image('road2','images/road/road2.png');
+        this.load.image('road3','images/road/road3.png');
+        this.load.image('road4','images/road/road4.png');
+        this.load.image('road5','images/road/road5.png');
+        this.load.image('road6','images/road/road6.png');
+        this.load.image('road7','images/road/road7.png');
         this.load.image('rd-beside-fire','images/road/rd-beside-fire.png');
+        this.load.image('road-after-fire','images/road/road-after-fire.png');
+        this.load.image('road-after-water','images/road/road-after-water.png');
+        
         
 
         //audio imports
@@ -32,28 +37,40 @@ class FirstScene extends Phaser.Scene{
 
         //icon imports
         this.load.image('obstacle-mars', 'images/icons/mars.png');
-        this.load.image('obstacle-mars', 'images/icons/fireBase.png');
-        this.load.image('obstacle-mars', 'images/icons/saturn.png');
-        this.load.image('obstacle-mars', 'images/icons/spaceship.png');
-        this.load.image('obstacle-mars', 'images/icons/fireRoad1.png');
-        this.load.image('obstacle-mars', 'images/icons/fireRoad5.png');
-        this.load.image('obstacle-mars', 'images/icons/fireRoad7.png');
-        this.load.image('obstacle-mars', 'images/icons/firework1.png');
-        this.load.image('obstacle-mars', 'images/icons/firework2.png');
-        this.load.image('obstacle-mars', 'images/icons/heart1.png');
-        this.load.image('obstacle-mars', 'images/icons/heart2.png');
-        this.load.image('obstacle-mars', 'images/icons/heart3.png');
-        this.load.image('obstacle-mars', 'images/icons/rocket.png');
-        this.load.image('obstacle-mars', 'images/icons/waterBase1.png');
-        this.load.image('obstacle-mars', 'images/icons/waterBase5.png');
-        this.load.image('obstacle-mars', 'images/icons/waterBase7.png');
-        this.load.image('obstacle-mars', 'images/icons/waterBase.png');
+        this.load.image('fireBase', 'images/icons/fireBase.png');
+        this.load.image('saturn', 'images/icons/saturn.png');
+        this.load.image('spaceship', 'images/icons/spaceship.png');
+        this.load.image('fireRoad1', 'images/icons/fireRoad1.png');
+        this.load.image('fireRoad5', 'images/icons/fireRoad5.png');
+        this.load.image('fireRoad7', 'images/icons/fireRoad7.png');
+        this.load.image('firework1', 'images/icons/firework1.png');
+        this.load.image('firework2', 'images/icons/firework2.png');
+        this.load.image('heart1', 'images/icons/heart1.png');
+        this.load.image('heart2', 'images/icons/heart2.png');
+        this.load.image('heart3', 'images/icons/heart3.png');
+        this.load.image('rocket', 'images/icons/rocket.png');
+        this.load.image('waterBase1', 'images/icons/waterBase1.png');
+        this.load.image('waterBase5', 'images/icons/waterBase5.png');
+        this.load.image('waterBase7', 'images/icons/waterBase7.png');
+        this.load.image('waterBase', 'images/icons/waterBase.png');
 
         //obstacle imports
-        this.load.image('fire','images/obstacles/fire-obst.png');
-        this.load.image('fire','images/obstacles/water-obst.png');
-        this.load.image('fire','images/obstacles/road2-obst.png');
-        this.load.image('fire','images/obstacles/road3-obst.png');
+        this.load.image('fire-obst','images/obstacles/fire-obst.png');
+        this.load.image('water-obst','images/obstacles/water-obst.png');
+        this.load.image('road2-obst','images/obstacles/road2-obst.png');
+        this.load.image('road3-obst','images/obstacles/road3-obst.png');
+        this.load.image('road7-obst','images/obstacles/road7-obst.png');
+
+        //furniture imports
+        this.load.image('door','images/obstacles/door.png');
+        this.load.image('leftLadder','images/obstacles/leftLadder.png');
+        this.load.image('rightLadder','images/obstacles/rightLadder.png');
+
+        
+
+
+
+
     }
 
 
@@ -80,7 +97,7 @@ class FirstScene extends Phaser.Scene{
       this.obstacles = this.physics.add.group();
       this.obstacles.create(500, 500, 'obstacle-mars'); // Example obstacle position, adjust as needed
       this .obstacles.create(260,1050,'starting-road')
-      this .obstacles.create(550,1040,'fire')
+      this .obstacles.create(550,1040,'fire-obst')
       this .obstacles.create(680,1050,'rd-beside-fire')
 
       // Set collision between Watergirl and obstacles
