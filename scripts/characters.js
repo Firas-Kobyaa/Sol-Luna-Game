@@ -109,3 +109,79 @@ function robot(){
 };
 
 console.log('bkrahkon')
+
+function rambo() {
+  // Define the p5.js sketch inside the rambo function
+  let p5Sketch = function(p) {
+    p.setup = function() {
+      p.createCanvas(400, 500);
+    };
+
+    p.draw = function() {
+      p.background(220);
+      
+      p.noStroke();
+      p.fill('#E8BEAC');
+      
+      
+      
+      p.rect(230, 50, 20, 10); // small detail
+
+      p.fill('#E8BEAC');
+      p.square(150, 50, 100); // head
+      
+      p.fill('blue');
+      p.rect(190, 150, 20, 5); // neck
+      
+      p.fill('#E8BEAC');
+      p.square(125, 155, 150); // body
+      
+      p.fill('blue');
+      p.rect(120, 170, 5, 30); // left hand
+      p.rect(90, 170, 30, 30);
+      
+      p.fill('#E8BEAC');
+      p.rect(90, 200, 30, 80); // part of left hand
+      
+      p.fill('blue');
+      p.rect(275, 170, 5, 30); // right hand
+      p.rect(280, 170, 30, 30);
+      
+      p.fill('#E8BEAC');
+      p.rect(280, 200, 30, 80); // part of right hand
+      
+      p.fill('black');
+      p.rect(147, 20, 5, 60); // left hair
+      p.rect(147, 10, 103, 40); // base hair
+      p.rect(250, 10, 5, 70); // right hair
+      
+      p.fill('#000000');
+      p.rect(230, 305, 30, 60); // black legs
+      p.rect(150, 305, 30, 60);
+      
+      p.fill('#E8BEAC');
+      p.rect(150, 360, 30, 80); // legs skin
+      p.rect(230, 360, 30, 80);
+      
+      p.fill('#FFFFFF');
+      p.rect(215, 80, 20, 10); // right eye
+      p.rect(170, 80, 20, 10); // left eye
+      
+      p.fill('#000000');
+      p.rect(190, 120, 20, 10); // mouth
+    };
+
+   
+
+  };
+
+  // Create a new p5 instance with the defined sketch
+  let myp5 = new p5(p5Sketch);
+
+  // Save the canvas as an image (this will trigger a download)
+  myp5.saveCanvas(myp5.canvas, 'rambo', 'png');
+}
+
+// Call the rambo function to generate and save the image
+
+
