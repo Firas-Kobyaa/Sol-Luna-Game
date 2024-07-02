@@ -1,3 +1,5 @@
+ //////////    Characters    \\\\\\\\\\\\\\\\
+
 //water girl character function
 const  watergirl = function(){
 
@@ -111,7 +113,7 @@ const robot = function() {
 
 console.log('bkrahkon')
 
-function rambo (){
+const rambo = function(){
   function setup() {
       createCanvas(400, 500);
     }
@@ -169,5 +171,51 @@ function rambo (){
 
 // Call the rambo function to generate and save the image
 
-
+const saro = function(){
+  function setup() {
+    createCanvas(400, 400);
+  }
+  
+  function draw() {
+    background(220);
+    fill(255);
+    
+    // Main character
+    ellipse(200, 250, 50, 50); // Head
+    
+    fill(128, 0, 128);
+    triangle(200, 285, 150, 350, 250, 350); // Body
+    
+    line(200, 275, 200, 350); // Body line
+    line(200, 350, 180, 400); // Left leg
+    line(200, 350, 220, 400); // Right leg
+    
+    line(150, 250, 200, 300); // Left arm
+    line(250, 250, 200, 300); // Right arm
+    
+    // Eyes
+    fill(0);
+    ellipse(190, 240, 5, 5); // Left eye
+    ellipse(210, 240, 5, 5); // Right eye
+    
+    // Smile
+    noFill();
+    arc(200, 250, 20, 20, 0, PI); // Smile
+    
+    // Hair
+    stroke(0); // Hair color
+    strokeWeight(2); // Hair thickness
+    
+    // Long hair flowing down
+    for (let i = 0; i < 10; i++) {
+      let x1 = 190 - i; // Adjust x position to spread the hair around the head
+      let y1 = 230 + i * 2; // Adjust y position to make the hair flow down
+      let x2 = 210 + i; // Adjust x position to spread the hair around the head
+      let y2 = 230 + i * 2; // Adjust y position to make the hair flow down
+      line(x1, y1, x1 - 10, y1 + 10); // Hair strands on the left
+      line(x2, y2, x2 + 10, y2 + 10); // Hair strands on the right
+    }
+  }
+  
+}
 
