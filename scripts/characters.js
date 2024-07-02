@@ -109,3 +109,63 @@ function robot(){
 };
 
 console.log('bkrahkon')
+
+function rambo (){
+  function setup() {
+      createCanvas(400, 500);
+    }
+    
+    function draw() {
+      background(220);
+      
+      noStroke()
+      rect(230,50,20,10)
+      fill('#E8BEAC')
+      //head
+      square(150,50,100)
+      //neck
+      rect(190,150,20,5)
+      fill('blue')
+      //body
+      square(125,155,150)
+      //left hand
+      rect(120,170,5,30)
+      rect(90,170,30,30)
+      fill('#E8BEAC')
+      rect(90,200,30,80)
+      //right hand
+      fill('blue')
+      rect(275,170,5,30)
+      rect(280,170,30,30)
+      fill('#E8BEAC')
+      rect(280,200,30,80)
+      
+      fill('black')
+      //left hair
+      rect(147,20,5,60)
+      //base hair
+      rect(147,10,103,40)
+      //right hair
+      rect(250,10,5,70)
+      // black legs
+      rect(230,305,30,60)
+      rect(150,305,30,60)
+      fill('#E8BEAC')
+      // legs skin
+      rect(150,360,30,80)
+      rect(230,360,30,80)
+      fill('#fffff')
+      //right eye
+      rect(215,80,20,10) 
+      //left eye
+      rect(170,80,20,10)
+      //mouth
+      rect(190,120,20,10)
+      
+      
+    }
+}
+
+// Call the rambo function to generate and save the image
+
+
