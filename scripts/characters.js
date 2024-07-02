@@ -111,10 +111,7 @@ const robot = function() {
 
 console.log('bkrahkon')
 
-
-
-// rambo character function
-const rambo = function() {
+function rambo (){
   function setup() {
       createCanvas(400, 500);
     }
@@ -171,5 +168,6 @@ const rambo = function() {
 }
 
 // Call the rambo function to generate and save the image
+
 
 

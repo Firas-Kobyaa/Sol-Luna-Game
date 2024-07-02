@@ -8,8 +8,8 @@ class FirstScene extends Phaser.Scene{
  
     
     preload (){
-        this.load.image('map','assets/space.png')
-        this.load.image('left-border','assets/left-rectangle-border.png')
+        this.load.image('map','images/space.png')
+        
     }
     create (data){
 
@@ -20,15 +20,10 @@ class FirstScene extends Phaser.Scene{
       map.displayWidth = this.sys.game.config.width;; // Set the desired width in pixels
       map.displayHeight = this.sys.game.config.height; 
        
-        this.physics.world.setBounds(0, 0, map.displayWidth, map.displayHeight);
-
-         // Create obstacles group
-         this.obstacles = this.physics.add.group();
-
-        let left_border = this.obstacles.create(300,500,'left-border')
+       
 
         // increase width and height
-        left_border.setScale(2)
+        
     }
     update (time,data){
 
