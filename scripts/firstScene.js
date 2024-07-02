@@ -97,7 +97,7 @@ class FirstScene extends Phaser.Scene{
       this.obstacles = this.physics.add.group();
       this.obstacles.create(500, 500, 'obstacle-mars'); // Example obstacle position, adjust as needed
       this .obstacles.create(260,1050,'starting-road')
-      this .obstacles.create(550,1040,'fire')
+      this .obstacles.create(550,1040,'fire-obst')
       this .obstacles.create(680,1050,'rd-beside-fire')
 
       // Set collision between Watergirl and obstacles
