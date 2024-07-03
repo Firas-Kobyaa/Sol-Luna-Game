@@ -43,10 +43,10 @@ class FirstScene extends Phaser.Scene{
         this.load.audio('music', './audio/music.mp3');
         
         //icon imports
-        this.load.image('obstacle-mars', 'images/icons/mars.png');
+        this.load.image('mars', 'images/icons/mars.png');
         this.load.image('fireBase', 'images/icons/fireBase.png');
         this.load.image('saturn', 'images/icons/saturn.png');
-        this.load.image('spaceship', 'images/icons/spaceship.png');
+        this.load.image('spaceship', 'images/icons/spaceship.png'); 
         this.load.image('fireRoad1', 'images/icons/fireRoad1.png');
         this.load.image('fireRoad5', 'images/icons/fireRoad5.png');
         this.load.image('fireRoad7', 'images/icons/fireRoad7.png');
@@ -62,16 +62,16 @@ class FirstScene extends Phaser.Scene{
         this.load.image('waterBase', 'images/icons/waterBase.png');
 
         //obstacle imports
-        this.load.image('fire-obst','images/obstacles/fire-obst.png');
-        this.load.image('water-obst','images/obstacles/water-obst.png');
-        this.load.image('road2-obst','images/obstacles/road2-obst.png');
-        this.load.image('road3-obst','images/obstacles/road3-obst.png');
-        this.load.image('road7-obst','images/obstacles/road7-obst.png');
+        this.load.image('fireobst','images/obstacles/fireobst.png');
+        this.load.image('waterobst','images/obstacles/waterobst.png');
+        this.load.image('road2obst','images/obstacles/road2obst.png');
+        this.load.image('road3obst','images/obstacles/road3obst.png');
+        this.load.image('road7obst','images/obstacles/road7obst.png');
 
         //furniture imports
         this.load.image('door','images/furniture/door.png');
-        this.load.image('leftLadder','images/obstacles/leftLadder.png');
-        this.load.image('rightLadder','images/obstacles/rightLadder.png');
+        this.load.image('leftLadder','images/furniture/leftLadder.png');
+        this.load.image('rightLadder','images/furniture/rightLadder.png');
 
         
 
@@ -149,33 +149,81 @@ class FirstScene extends Phaser.Scene{
         //obstacles
     
         this.obstacles = this.physics.add.group();
-        let obstacle_fire = this.obstacles.create(570, 1050, 'fire-obst');
+        let obstacle_fire = this.obstacles.create(570, 1050, 'fireobst');
         obstacle_fire.setDisplaySize(100, 120);
-        let obstacle_water = this.obstacles.create(880, 1050, 'water-obst');
+        
+        let obstacle_water = this.obstacles.create(880, 1050, 'waterobst');
         obstacle_water.setDisplaySize(120, 100);
         
+        let road2obst = this.obstacles.create(1300, 700, 'road2obst');
+        road2obst.setDisplaySize(120, 100);
+
+        let road3obst = this.obstacles.create(900, 550, 'road3obst');
+        road3obst.setDisplaySize(120, 100);
+
+        let road7obst = this.obstacles.create(1500, 200, 'road7obst');
+        road7obst.setDisplaySize(120, 100);
+        // road 7
+        let fireobst_1 = this.obstacles.create(800, 250, 'fireobst');
+        fireobst_1.setDisplaySize(50, 50);
+
+        let waterobst_1 = this.obstacles.create(900, 250, 'waterobst');
+        waterobst_1.setDisplaySize(50, 50);
+        //road 1
+        let fireobst_2 = this.obstacles.create(1700, 800, 'fireobst');
+        fireobst_2.setDisplaySize(50, 50);
+
+        let waterobst_2 = this.obstacles.create(1500, 500, 'waterobst');
+        waterobst_2.setDisplaySize(50, 50);
        
         //icons 
 
-        // let spaceship = this.icons.create(100, 500, 'spaceship');
-        // spaceship.setDisplaySize(120, 100);
-        // let saturn = this.icons.create(880, 1050, 'saturn');
-        // saturn.setDisplaySize(120, 100);
-        // let firework1 = this.icons.create(880, 1050, 'firework1');
-        // firework1.setDisplaySize(120, 100);
-        // let firework2 = this.icons.create(880, 1050, 'firework2');
-        // firework2.setDisplaySize(120, 100);
-        // let obstacle-mars = this.icons.create(880, 1050, 'obstacle-mars');
-        // obstacle-mars.setDisplaySize(120, 100);
-       
-        
-
-
-
+        let spaceship = this.obstacles.create(1700, 500, 'spaceship');
+        spaceship.setDisplaySize(80, 80);
 
         
-         let rocket = this.obstacles.create(200, 80, 'rocket');
+        
+        
+        let saturn = this.obstacles.create(200, 700, 'saturn');
+        saturn.setDisplaySize(70, 70);
+        
+        
+        let rocket = this.obstacles.create(200, 80, 'rocket');
          rocket.setDisplaySize(120, 100);
+
+         let mars = this.obstacles.create(1350, 400, 'mars');
+         mars.setDisplaySize(70, 70);
+
+        
+        let firework1 = this.obstacles.create(800, 80, 'firework1');
+        firework1.setDisplaySize(50, 50);
+
+        let firework2 = this.obstacles.create(500, 100, 'firework2');
+        firework2.setDisplaySize(55, 55);
+
+
+        let leftLadder = this.obstacles.create(643, 503, 'leftLadder');
+        leftLadder.setDisplaySize(150, 150);
+
+        let rightLadder = this.obstacles.create(1175, 670, 'rightLadder');
+        rightLadder.setDisplaySize(130, 130);
+        
+        
+
+        
+       
+        // let heart1=this.obstacles.create(500, 118, 'heart1');      
+        // heart1.setDisplaySize(120, 100);
+        // let heart2=this.obstacles.create(800, 118, 'heart2');      
+        // heart2.setDisplaySize(120, 100);
+        // let heart3=this.obstacles.create(500, 118, 'heart3');      
+        // heart3.setDisplaySize(120, 100);
+
+
+
+
+        
+         
 
 
 
