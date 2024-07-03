@@ -224,7 +224,7 @@
 const robot = function() {
 
   function setup() {
-    createCanvas(50, 70); // Create a canvas of 400x400 pixels
+    createCanvas(40, 80); // Create a canvas of 400x400 pixels
     
     let robotURL = canvas.toDataURL();
     localStorage.setItem('robot', robotURL); 

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -14,16 +14,27 @@
 </head>
 <body>
    
-
+<h1>Hello</h1>
     <div class="container">
         <button id="startButton">Start Game</button>
-        <button id="startButton">Levels</button>
-        <button id="startButton">Quit</button>
-
-
+        <button id="startButton" class="quitButton">Quit</button>
     </div>
-
     
+   <!--  script to close when press on quit button -->>
+    <script>
+        function closeWindow() {
+            window.close();
+        }
+
+
+        document.addEventListener('DOMContentLoaded', (event) => {
+            let buttons = document.getElementsByClassName('quitButton');
+            for (let i = 0; i < buttons.length; i++) {
+                buttons[i].addEventListener('click', closeWindow);
+            }
+        });
+    </script>
+
 
 
 
@@ -34,4 +45,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/phaser/3.80.1/phaser.js"></script>
 </body>
 </html>
+ -->
 
+
+ 

@@ -23,6 +23,7 @@ let config = {
         // center to the center of the screen
         autoCenter: Phaser.Scale.CENTER_BOTH
     }
+    
    
 }
 
