@@ -39,27 +39,28 @@
 //         this.load.image('road-after-fire','images/road/road-after-fire.png');
 //         this.load.image('road-after-water','images/road/road-after-water.png');
 
-//         //audio imports
-//         this.load.audio('music', './audio/music.mp3');
+        //audio imports
+        this.load.audio('music', './audio/music.mp3');
+        this.load.audio('jumpMusic', './audio/jump-music.mp3');
         
-//         //icon imports
-//         this.load.image('mars', 'images/icons/mars.png');
-//         this.load.image('fireBase', 'images/icons/fireBase.png');
-//         this.load.image('saturn', 'images/icons/saturn.png');
-//         this.load.image('spaceship', 'images/icons/spaceship.png'); 
-//         this.load.image('fireRoad1', 'images/icons/fireRoad1.png');
-//         this.load.image('fireRoad5', 'images/icons/fireRoad5.png');
-//         this.load.image('fireRoad7', 'images/icons/fireRoad7.png');
-//         this.load.image('firework1', 'images/icons/firework1.png');
-//         this.load.image('firework2', 'images/icons/firework2.png');
-//         this.load.image('heart1', 'images/icons/heart1.png');
-//         this.load.image('heart2', 'images/icons/heart2.png');
-//         this.load.image('heart3', 'images/icons/heart3.png');
-//         this.load.image('rocket', 'images/icons/rocket.png');
-//         this.load.image('waterBase1', 'images/icons/waterBase1.png');
-//         this.load.image('waterBase5', 'images/icons/waterBase5.png');
-//         this.load.image('waterBase7', 'images/icons/waterBase7.png');
-//         this.load.image('waterBase', 'images/icons/waterBase.png');
+        //icon imports
+        this.load.image('mars', 'images/icons/mars.png');
+        this.load.image('fireBase', 'images/icons/fireBase.png');
+        this.load.image('saturn', 'images/icons/saturn.png');
+        this.load.image('spaceship', 'images/icons/spaceship.png'); 
+        this.load.image('fireRoad1', 'images/icons/fireRoad1.png');
+        this.load.image('fireRoad5', 'images/icons/fireRoad5.png');
+        this.load.image('fireRoad7', 'images/icons/fireRoad7.png');
+        this.load.image('firework1', 'images/icons/firework1.png');
+        this.load.image('firework2', 'images/icons/firework2.png');
+        this.load.image('heart1', 'images/icons/heart1.png');
+        this.load.image('heart2', 'images/icons/heart2.png');
+        this.load.image('heart3', 'images/icons/heart3.png');
+        this.load.image('rocket', 'images/icons/rocket.png');
+        this.load.image('waterRoad1', 'images/icons/waterRoad1.png');
+        this.load.image('waterRoad5', 'images/icons/waterRoad5.png');
+        this.load.image('waterRoad7', 'images/icons/waterRoad7.png');
+        this.load.image('waterBase', 'images/icons/waterBase.png');
 
 //         //obstacle imports
 //         this.load.image('fireobst','images/obstacles/fireobst.png');
@@ -74,21 +75,24 @@
 //         this.load.image('rightLadder','images/furniture/rightLadder.png');
 
         
+        // text
+        this.load.image('solluna','images/text/sol-luna.png');
+        
 
 
 
 
-//     }
+    }
 
 
 
 
-//     create (data){
+    create (data){
 
     
 
-//         // Set the desired height in pixels
-//         let map = this.add.image(960,540,'map')
+        // Set the desired height in pixels
+        let map = this.add.image(960,540,'map')
 
 //       // Set the desired height in pixels
 //       map.displayWidth = this.sys.game.config.width;; // Set the desired width in pixels
@@ -145,8 +149,21 @@
 //         door.setImmovable();
 //         door.setDisplaySize(200, 200);
 
+        let road2obst = this.physics.add.sprite(1300, 700, 'road2obst');
+        road2obst.setDisplaySize(60, 60);
+        road2obst.setImmovable();
 
-//         //obstacles
+        
+        let road3obst = this.physics.add.sprite(900, 550, 'road3obst');
+        road3obst.setDisplaySize(60, 60);
+        road3obst.setImmovable();
+
+        let road7obst = this.physics.add.sprite(1300, 230, 'road7obst');
+        road7obst.setDisplaySize(60, 60);
+        road7obst.setImmovable();
+
+
+        //obstacles
     
 //         this.obstacles = this.physics.add.group();
 //         let obstacle_fire = this.obstacles.create(570, 1050, 'fireobst');
@@ -155,34 +172,29 @@
 //         let obstacle_water = this.obstacles.create(880, 1050, 'waterobst');
 //         obstacle_water.setDisplaySize(120, 100);
         
-//         let road2obst = this.obstacles.create(1300, 700, 'road2obst');
-//         road2obst.setDisplaySize(60, 60);
+        
+        
 
-//         let road3obst = this.obstacles.create(900, 550, 'road3obst');
-//         road3obst.setDisplaySize(60, 60);
+        // road 7
+        let fireobst_1 = this.obstacles.create(850, 250, 'fireRoad1');
+        fireobst_1.setDisplaySize(30, 30);
 
-//         let road7obst = this.obstacles.create(1300, 230, 'road7obst');
-//         road7obst.setDisplaySize(60, 60);
-//         // road 7
-//         let fireobst_1 = this.obstacles.create(850, 250, 'fireobst');
-//         fireobst_1.setDisplaySize(30, 30);
+        let waterobst_1 = this.obstacles.create(900, 250, 'waterRoad1');
+        waterobst_1.setDisplaySize(30, 30);
+        //road 1
+        let fireobst_2 = this.obstacles.create(1750, 850, 'fireRoad5');
+        fireobst_2.setDisplaySize(30, 30);
 
-//         let waterobst_1 = this.obstacles.create(900, 250, 'waterobst');
-//         waterobst_1.setDisplaySize(30, 30);
-//         //road 1
-//         let fireobst_2 = this.obstacles.create(1750, 850, 'fireobst');
-//         fireobst_2.setDisplaySize(30, 30);
+        let waterobst_2 = this.obstacles.create(1800, 850, 'waterRoad5');
+        waterobst_2.setDisplaySize(30, 30);
 
-//         let waterobst_2 = this.obstacles.create(1800, 850, 'waterobst');
-//         waterobst_2.setDisplaySize(30, 30);
+       //road 4
+       let fireobst_3 = this.obstacles.create(300, 400, 'fireRoad7');
+       fireobst_3.setDisplaySize(30, 30);
 
-//        //road 4
-//        let fireobst_3 = this.obstacles.create(300, 400, 'fireobst');
-//        fireobst_3.setDisplaySize(30, 30);
-
-//        let waterobst_3 = this.obstacles.create(350, 400, 'waterobst');
-//        waterobst_3.setDisplaySize(30, 30);
-//         //icons 
+       let waterobst_3 = this.obstacles.create(350, 400, 'waterRoad7');
+       waterobst_3.setDisplaySize(30, 30);
+        //icons 
 
 //         let spaceship = this.obstacles.create(1700, 500, 'spaceship');
 //         spaceship.setDisplaySize(80, 80);
@@ -204,8 +216,8 @@
 //         let firework1 = this.obstacles.create(800, 80, 'firework1');
 //         firework1.setDisplaySize(50, 50);
 
-//         let firework2 = this.obstacles.create(500, 100, 'firework2');
-//         firework2.setDisplaySize(55, 55);
+        let firework2 = this.obstacles.create(1200, 100, 'firework2');
+        firework2.setDisplaySize(55, 55);
 
 
 //         let leftLadder = this.obstacles.create(643, 503, 'leftLadder');
@@ -215,7 +227,8 @@
 //         rightLadder.setDisplaySize(130, 130);
         
         
-
+        let solluna = this.obstacles.create(1000, 50, 'solluna');
+        solluna.setDisplaySize(300, 50);
         
         
 
@@ -253,15 +266,35 @@
       
 
 
-//       // Set collision between Watergirl and starting road
-//       this.physics.add.collider(this.watergirlSprite,start_road)
-//       this.physics.add.collider(this.watergirlSprite,road_after_fire)
-//       this.physics.add.collider(this.watergirlSprite,road_after_water)
-//       this.physics.add.collider(this.watergirlSprite,road1)
-//       this.physics.add.collider(this.watergirlSprite,road2)
-//       this.physics.add.collider(this.watergirlSprite,road3)
-//       this.physics.add.collider(this.watergirlSprite,road4)
-//       this.physics.add.collider(this.watergirlSprite,end_road)
+      // Set collision between Watergirl and starting road
+      this.physics.add.collider(this.watergirlSprite,start_road)
+      this.physics.add.collider(this.watergirlSprite,road_after_fire)
+      this.physics.add.collider(this.watergirlSprite,road_after_water)
+      this.physics.add.collider(this.watergirlSprite,road1)
+      this.physics.add.collider(this.watergirlSprite,road2)
+      this.physics.add.collider(this.watergirlSprite,road3)
+      this.physics.add.collider(this.watergirlSprite,road4)
+      this.physics.add.collider(this.watergirlSprite,end_road)
+      this.physics.add.collider(this.watergirlSprite,road2obst)
+      this.physics.add.collider(this.watergirlSprite,road3obst)
+      this.physics.add.collider(this.watergirlSprite,road7obst)
+
+      // collidere handeling
+
+      this.physics.add.collider(this.watergirlSprite, obstacle_water, this.handleCollision, null, this);
+      this.physics.add.collider(this.watergirlSprite, obstacle_fire, this.handleCollision, null, this);
+      this.physics.add.collider(this.watergirlSprite, road2obst, this.handleCollision, null, this);
+      this.physics.add.collider(this.watergirlSprite, road3obst, this.handleCollision, null, this);
+      this.physics.add.collider(this.watergirlSprite, road7obst, this.handleCollision, null, this);
+      this.physics.add.collider(this.watergirlSprite, fireobst_1, this.removeObstacle, null, this);
+      this.physics.add.collider(this.watergirlSprite, waterobst_1, this.removeObstacle, null, this);
+      this.physics.add.collider(this.watergirlSprite, fireobst_2, this.removeObstacle, null, this);
+      this.physics.add.collider(this.watergirlSprite, waterobst_2, this.removeObstacle, null, this);
+      this.physics.add.collider(this.watergirlSprite, fireobst_3, this.removeObstacle, null, this);
+      this.physics.add.collider(this.watergirlSprite, waterobst_3, this.removeObstacle, null, this);
+
+        
+    
 
       
 //       // creates and returns an object containing properties 
@@ -298,44 +331,96 @@
 
 //     update (time,data){
 
-//         const speed = 200;
+        const speed = 300;
 
-//         // Horizontal movement
-//         if (this.cursors.left.isDown) {
-//             this.watergirlSprite.setVelocityX(-speed); // Move left
-//         } else if (this.cursors.right.isDown) {
-//             this.watergirlSprite.setVelocityX(speed); // Move right
-//         } else {
-//             this.watergirlSprite.setVelocityX(0); // Stop horizontal movement
-//         }
-//     }
+        // Horizontal movement
+        if (this.cursors.left.isDown) {
+            this.watergirlSprite.setVelocityX(-speed); // Move left
+        } else if (this.cursors.right.isDown) {
+            this.watergirlSprite.setVelocityX(speed); // Move right
+        } else {
+            this.watergirlSprite.setVelocityX(0); // Stop horizontal movement
+        }
+        
+   
+    }
 
-//     jump() {
-//         const jumpHeight = -300; // Adjust jump height as needed
+    jump() {
+        const jumpHeight = -300; // Adjust jump height as needed
+        const jumpMusic = this.sound.add('jumpMusic');
+        jumpMusic.play();
+        // Vertical movement (jumping)
+        if (this.watergirlSprite.body.onFloor()) { // Check if on the ground
+            this.watergirlSprite.setVelocityY(jumpHeight); // Jump velocity
+        }
+    }
 
-//         // Vertical movement (jumping)
-//         if (this.watergirlSprite.body.onFloor()) { // Check if on the ground
-//             this.watergirlSprite.setVelocityY(jumpHeight); // Jump velocity
-//         }
-//     }
+    handleCollision() {
+        // Handle collision logic here
+        // Restart the scene when Watergirl collides with obstacle_fire
+        
+        this.scene.restart();
+    }
+    removeObstacle(watergirlSprite, obstacle) {
+        //obstacle.disableBody(true, true); // Disable and hide the obstacle
+        // Optionally, you can destroy the obstacle instead of just disabling it
+        obstacle.destroy();
+    }
 
 
+//game over logic:
 
+// let player = watergirlSprite;
+// let fires;
+// let gameOver = false;
+// if (gameOver) {
+//     return;
+// }
+
+// const cursors = this.input.keyboard.createCursorKeys();
+
+// if (cursors.left.isDown) {
+//     player.setVelocityX(-160);
+//     player.anims.play('left', true);
+// } else if (cursors.right.isDown) {
+//     player.setVelocityX(160);
+//     player.anims.play('right', true);
+// } else {
+//     player.setVelocityX(0);
+//     player.anims.play('turn');
+// }
+
+// if (cursors.up.isDown && player.body.touching.down) {
+//     player.setVelocityY(-330);
+// }
+// }
+
+// function hitFire(player, fire) {
+// this.physics.pause();
+
+// player.setTint(0xff0000);
+// player.anims.play('turn');
+
+// player.setVelocityY(300);  // make the player fall down
+
+// gameOver = true;
+
+// this.add.text(400, 300, 'Game Over', { fontSize: '64px', fill: '#fff' }).setOrigin(0.5);
+// }
+
+// Function to quit the game
+// function quitGame() {
+//     // Remove the game canvas
+//     game.destroy(true);
+
+//  }
+
+//  document.getElementsByClassName('quitButton').addEventListener('click', quitGame());
 
 
 
     
 
-// }
+}
 
- export default FirstScene
-
-
-
-
-
-
-
-//####################################################
-
-
+export default FirstScene
