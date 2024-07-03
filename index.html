@@ -17,11 +17,24 @@
 
     <div class="container">
         <button id="startButton">Start Game</button>
-        <button id="startButton">Levels</button>
-        <button id="startButton">Quit</button>
+        <button id="startButton" class="quitButton">Quit</button>
     </div>
-
     
+   <!--  script to close when press on quit button -->>
+    <script>
+        function closeWindow() {
+            window.close();
+        }
+
+
+        document.addEventListener('DOMContentLoaded', (event) => {
+            let buttons = document.getElementsByClassName('quitButton');
+            for (let i = 0; i < buttons.length; i++) {
+                buttons[i].addEventListener('click', closeWindow);
+            }
+        });
+    </script>
+
 
 
 
