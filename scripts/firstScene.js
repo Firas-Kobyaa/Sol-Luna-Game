@@ -156,26 +156,32 @@ class FirstScene extends Phaser.Scene{
         obstacle_water.setDisplaySize(120, 100);
         
         let road2obst = this.obstacles.create(1300, 700, 'road2obst');
-        road2obst.setDisplaySize(120, 100);
+        road2obst.setDisplaySize(60, 60);
 
         let road3obst = this.obstacles.create(900, 550, 'road3obst');
-        road3obst.setDisplaySize(120, 100);
+        road3obst.setDisplaySize(60, 60);
 
-        let road7obst = this.obstacles.create(1500, 200, 'road7obst');
-        road7obst.setDisplaySize(120, 100);
+        let road7obst = this.obstacles.create(1300, 230, 'road7obst');
+        road7obst.setDisplaySize(60, 60);
         // road 7
-        let fireobst_1 = this.obstacles.create(800, 250, 'fireobst');
-        fireobst_1.setDisplaySize(50, 50);
+        let fireobst_1 = this.obstacles.create(850, 250, 'fireobst');
+        fireobst_1.setDisplaySize(30, 30);
 
         let waterobst_1 = this.obstacles.create(900, 250, 'waterobst');
-        waterobst_1.setDisplaySize(50, 50);
+        waterobst_1.setDisplaySize(30, 30);
         //road 1
-        let fireobst_2 = this.obstacles.create(1700, 800, 'fireobst');
-        fireobst_2.setDisplaySize(50, 50);
+        let fireobst_2 = this.obstacles.create(1750, 850, 'fireobst');
+        fireobst_2.setDisplaySize(30, 30);
 
-        let waterobst_2 = this.obstacles.create(1500, 500, 'waterobst');
-        waterobst_2.setDisplaySize(50, 50);
-       
+        let waterobst_2 = this.obstacles.create(1800, 850, 'waterobst');
+        waterobst_2.setDisplaySize(30, 30);
+
+       //road 4
+       let fireobst_3 = this.obstacles.create(300, 400, 'fireobst');
+       fireobst_3.setDisplaySize(30, 30);
+
+       let waterobst_3 = this.obstacles.create(350, 400, 'waterobst');
+       waterobst_3.setDisplaySize(30, 30);
         //icons 
 
         let spaceship = this.obstacles.create(1700, 500, 'spaceship');
@@ -191,8 +197,8 @@ class FirstScene extends Phaser.Scene{
         let rocket = this.obstacles.create(200, 80, 'rocket');
          rocket.setDisplaySize(120, 100);
 
-         let mars = this.obstacles.create(1350, 400, 'mars');
-         mars.setDisplaySize(70, 70);
+        let mars = this.obstacles.create(1350, 400, 'mars');
+        mars.setDisplaySize(70, 70);
 
         
         let firework1 = this.obstacles.create(800, 80, 'firework1');
@@ -207,6 +213,9 @@ class FirstScene extends Phaser.Scene{
 
         let rightLadder = this.obstacles.create(1175, 670, 'rightLadder');
         rightLadder.setDisplaySize(130, 130);
+        
+        
+
         
         
 

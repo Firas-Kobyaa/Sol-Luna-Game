@@ -38,11 +38,10 @@ game.scene.add('firstScene',firstScene)
 
 document.getElementById('startButton').addEventListener('click', function() {
     // This script will be executed when the button with id 'myButton' is clicked
-    console.log('Button was clicked!');
+    console.log('Button was clicked!')
 
-    var divs = document.querySelectorAll('div');
-    
     // Iterate over the NodeList and remove each div
+    var divs = document.querySelectorAll('div');
     divs.forEach(function(div) {
         div.parentNode.removeChild(div);
     });
