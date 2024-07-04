@@ -1,12 +1,12 @@
 
-class FirstScene extends Phaser.Scene{
-    constructor(){
-        super({key: 'firstScene'})
-    }
+// class FirstScene extends Phaser.Scene{
+//     constructor(){
+//         super({key: 'firstScene'})
+//     }
 
  
     
-    preload (){
+//     preload (){
 
         
         let robotURL = localStorage.getItem('robot');
@@ -62,20 +62,26 @@ class FirstScene extends Phaser.Scene{
         this.load.image('waterRoad1', 'images/icons/waterRoad1.png');
         this.load.image('waterRoad5', 'images/icons/waterRoad5.png');
         this.load.image('waterRoad7', 'images/icons/waterRoad7.png');
+        this.load.image('waterRoad1', 'images/icons/waterRoad1.png');
+        this.load.image('waterRoad5', 'images/icons/waterRoad5.png');
+        this.load.image('waterRoad7', 'images/icons/waterRoad7.png');
         this.load.image('waterBase', 'images/icons/waterBase.png');
 
-        //obstacle imports
-        this.load.image('fireobst','images/obstacles/fireobst.png');
-        this.load.image('waterobst','images/obstacles/waterobst.png');
-        this.load.image('road2obst','images/obstacles/road2obst.png');
-        this.load.image('road3obst','images/obstacles/road3obst.png');
-        this.load.image('road7obst','images/obstacles/road7obst.png');
+//         //obstacle imports
+//         this.load.image('fireobst','images/obstacles/fireobst.png');
+//         this.load.image('waterobst','images/obstacles/waterobst.png');
+//         this.load.image('road2obst','images/obstacles/road2obst.png');
+//         this.load.image('road3obst','images/obstacles/road3obst.png');
+//         this.load.image('road7obst','images/obstacles/road7obst.png');
 
-        //furniture imports
-        this.load.image('door','images/furniture/door.png');
-        this.load.image('leftLadder','images/furniture/leftLadder.png');
-        this.load.image('rightLadder','images/furniture/rightLadder.png');
+//         //furniture imports
+//         this.load.image('door','images/furniture/door.png');
+//         this.load.image('leftLadder','images/furniture/leftLadder.png');
+//         this.load.image('rightLadder','images/furniture/rightLadder.png');
 
+        
+        // text
+        this.load.image('solluna','images/text/sol-luna.png');
         
         // text
         this.load.image('solluna','images/text/sol-luna.png');
@@ -96,9 +102,9 @@ class FirstScene extends Phaser.Scene{
         // Set the desired height in pixels
         let map = this.add.image(960,540,'map')
 
-      // Set the desired height in pixels
-      map.displayWidth = this.sys.game.config.width;; // Set the desired width in pixels
-      map.displayHeight = this.sys.game.config.height; 
+//       // Set the desired height in pixels
+//       map.displayWidth = this.sys.game.config.width;; // Set the desired width in pixels
+//       map.displayHeight = this.sys.game.config.height; 
 
       // Add Watergirl character
       this.watergirlSprite = this.physics.add.sprite(250, 500, 'watergirl'); // Adjust position as needed
@@ -109,47 +115,47 @@ class FirstScene extends Phaser.Scene{
       this.char2.setDisplaySize(70, 80);
 
 
-      //  create the starting road
-      let start_road = this.physics.add.sprite(260,1047,'starting-road')
+//       //  create the starting road
+//       let start_road = this.physics.add.sprite(260,1047,'starting-road')
       
-      // making the starting road unmovable
-      start_road.setImmovable();
+//       // making the starting road unmovable
+//       start_road.setImmovable();
 
 
-         //  create the road after fire
-        let road_after_fire = this.physics.add.sprite(720,1047,'road-after-fire')
-            road_after_fire.setImmovable();
+//          //  create the road after fire
+//         let road_after_fire = this.physics.add.sprite(720,1047,'road-after-fire')
+//             road_after_fire.setImmovable();
 
-        // create road before water
+//         // create road before water
        
-        let road_after_water = this.physics.add.sprite(1450,1047,'road-after-water')
-        road_after_water.setImmovable();
-        road_after_water.setDisplaySize(1000, 75);
+//         let road_after_water = this.physics.add.sprite(1450,1047,'road-after-water')
+//         road_after_water.setImmovable();
+//         road_after_water.setDisplaySize(1000, 75);
 
-        let road1 = this.physics.add.sprite(1700,900,'road1')
-        road1.setImmovable();
-        road1.setDisplaySize(500, 60);
+//         let road1 = this.physics.add.sprite(1700,900,'road1')
+//         road1.setImmovable();
+//         road1.setDisplaySize(500, 60);
 
-        let road2 = this.physics.add.sprite(1200,750,'road2')
-        road2.setImmovable();
-        road2.setDisplaySize(500, 60);
+//         let road2 = this.physics.add.sprite(1200,750,'road2')
+//         road2.setImmovable();
+//         road2.setDisplaySize(500, 60);
         
-        let road3 = this.physics.add.sprite(900,600,'road3')
-        road3.setImmovable();
-        road3.setDisplaySize(500, 60);
-
-        
-
-        let road4 = this.physics.add.sprite(350,450,'road5')
-        road4.setImmovable();
-        road4.setDisplaySize(500, 60);
+//         let road3 = this.physics.add.sprite(900,600,'road3')
+//         road3.setImmovable();
+//         road3.setDisplaySize(500, 60);
 
         
 
+//         let road4 = this.physics.add.sprite(350,450,'road5')
+//         road4.setImmovable();
+//         road4.setDisplaySize(500, 60);
 
-        let end_road = this.physics.add.sprite(1300,300,'road7');
-        end_road.setDisplaySize(1500, 60);
-        end_road.setImmovable();
+        
+
+
+//         let end_road = this.physics.add.sprite(1300,300,'road7');
+//         end_road.setDisplaySize(1500, 60);
+//         end_road.setImmovable();
 
         
         let door = this.physics.add.sprite(1840,160,'door');
@@ -184,56 +190,65 @@ class FirstScene extends Phaser.Scene{
 
         // road 7
         let fireobst_1 = this.obstacles.create(850, 250, 'fireRoad1');
+        let fireobst_1 = this.obstacles.create(850, 250, 'fireRoad1');
         fireobst_1.setDisplaySize(30, 30);
 
+        let waterobst_1 = this.obstacles.create(900, 250, 'waterRoad1');
         let waterobst_1 = this.obstacles.create(900, 250, 'waterRoad1');
         waterobst_1.setDisplaySize(30, 30);
         //road 1
         let fireobst_2 = this.obstacles.create(1750, 850, 'fireRoad5');
+        let fireobst_2 = this.obstacles.create(1750, 850, 'fireRoad5');
         fireobst_2.setDisplaySize(30, 30);
 
+        let waterobst_2 = this.obstacles.create(1800, 850, 'waterRoad5');
         let waterobst_2 = this.obstacles.create(1800, 850, 'waterRoad5');
         waterobst_2.setDisplaySize(30, 30);
 
        //road 4
        let fireobst_3 = this.obstacles.create(300, 400, 'fireRoad7');
+       let fireobst_3 = this.obstacles.create(300, 400, 'fireRoad7');
        fireobst_3.setDisplaySize(30, 30);
 
+       let waterobst_3 = this.obstacles.create(350, 400, 'waterRoad7');
        let waterobst_3 = this.obstacles.create(350, 400, 'waterRoad7');
        waterobst_3.setDisplaySize(30, 30);
         //icons 
 
-        let spaceship = this.obstacles.create(1700, 500, 'spaceship');
-        spaceship.setDisplaySize(80, 80);
+//         let spaceship = this.obstacles.create(1700, 500, 'spaceship');
+//         spaceship.setDisplaySize(80, 80);
 
         
         
         
-        let saturn = this.obstacles.create(200, 700, 'saturn');
-        saturn.setDisplaySize(70, 70);
+//         let saturn = this.obstacles.create(200, 700, 'saturn');
+//         saturn.setDisplaySize(70, 70);
         
         
-        let rocket = this.obstacles.create(200, 80, 'rocket');
-         rocket.setDisplaySize(120, 100);
+//         let rocket = this.obstacles.create(200, 80, 'rocket');
+//          rocket.setDisplaySize(120, 100);
 
-        let mars = this.obstacles.create(1350, 400, 'mars');
-        mars.setDisplaySize(70, 70);
+//         let mars = this.obstacles.create(1350, 400, 'mars');
+//         mars.setDisplaySize(70, 70);
 
         
-        let firework1 = this.obstacles.create(800, 80, 'firework1');
-        firework1.setDisplaySize(50, 50);
+//         let firework1 = this.obstacles.create(800, 80, 'firework1');
+//         firework1.setDisplaySize(50, 50);
 
+        let firework2 = this.obstacles.create(1200, 100, 'firework2');
         let firework2 = this.obstacles.create(1200, 100, 'firework2');
         firework2.setDisplaySize(55, 55);
 
 
-        let leftLadder = this.obstacles.create(643, 503, 'leftLadder');
-        leftLadder.setDisplaySize(150, 150);
+//         let leftLadder = this.obstacles.create(643, 503, 'leftLadder');
+//         leftLadder.setDisplaySize(150, 150);
 
-        let rightLadder = this.obstacles.create(1175, 670, 'rightLadder');
-        rightLadder.setDisplaySize(130, 130);
+//         let rightLadder = this.obstacles.create(1175, 670, 'rightLadder');
+//         rightLadder.setDisplaySize(130, 130);
         
         
+        let solluna = this.obstacles.create(1000, 50, 'solluna');
+        solluna.setDisplaySize(300, 50);
         let solluna = this.obstacles.create(1000, 50, 'solluna');
         solluna.setDisplaySize(300, 50);
         
@@ -241,12 +256,12 @@ class FirstScene extends Phaser.Scene{
 
         
        
-        // let heart1=this.obstacles.create(500, 118, 'heart1');      
-        // heart1.setDisplaySize(120, 100);
-        // let heart2=this.obstacles.create(800, 118, 'heart2');      
-        // heart2.setDisplaySize(120, 100);
-        // let heart3=this.obstacles.create(500, 118, 'heart3');      
-        // heart3.setDisplaySize(120, 100);
+//         // let heart1=this.obstacles.create(500, 118, 'heart1');      
+//         // heart1.setDisplaySize(120, 100);
+//         // let heart2=this.obstacles.create(800, 118, 'heart2');      
+//         // heart2.setDisplaySize(120, 100);
+//         // let heart3=this.obstacles.create(500, 118, 'heart3');      
+//         // heart3.setDisplaySize(120, 100);
 
 
 
@@ -267,7 +282,7 @@ class FirstScene extends Phaser.Scene{
         
         
 
-      // fix all obstacles to nonmovable
+//       // fix all obstacles to nonmovable
       
 
       
@@ -337,8 +352,8 @@ class FirstScene extends Phaser.Scene{
       // representing the state of the arrow keys
       this.cursors = this.input.keyboard.createCursorKeys();
     
-       // listen for a keydown event specifically for the 'UP' arrow key 
-       this.input.keyboard.on('keydown-UP',this.jump,this)
+//        // listen for a keydown event specifically for the 'UP' arrow key 
+//        this.input.keyboard.on('keydown-UP',this.jump,this)
 
        this.input.keyboard.on('keydown-W', this.jumpChar2, this);
        this.input.keyboard.on('keydown-A', this.moveLeftChar2, this);
@@ -357,7 +372,7 @@ class FirstScene extends Phaser.Scene{
 
            
         
-    }
+//     }
 
 
 
@@ -370,8 +385,9 @@ class FirstScene extends Phaser.Scene{
 
 
 
-    update (time,data){
+//     update (time,data){
 
+        const speed = 300;
         const speed = 300;
 
         // Horizontal movement
