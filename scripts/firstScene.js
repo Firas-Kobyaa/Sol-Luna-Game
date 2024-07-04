@@ -15,14 +15,15 @@ class FirstScene extends Phaser.Scene{
         //check if character image is found
         if (robotURL) {
             // Load the image from the data URL
-            this.load.image('watergirl', robotURL);
+            this.load.image('watergirl', './images/main-characters/robot.png');
           } else {
             console.error('No image URL found in localStorage');
           }
 
-
         // Background imports
         this.load.image('map','images/backgrounds/space.png')
+
+        this.load.image('char2','images/main-characters/char.png')
 
        
 
@@ -42,6 +43,7 @@ class FirstScene extends Phaser.Scene{
         //audio imports
         this.load.audio('music', './audio/music.mp3');
         this.load.audio('jumpMusic', './audio/jump-music.mp3');
+        this.load.audio('points', './audio/points.mp3');
         
         //icon imports
         this.load.image('mars', 'images/icons/mars.png');
@@ -101,6 +103,11 @@ class FirstScene extends Phaser.Scene{
       // Add Watergirl character
       this.watergirlSprite = this.physics.add.sprite(250, 500, 'watergirl'); // Adjust position as needed
       this.watergirlSprite.setGravityY(300); // Adjust scale as needed
+
+      this.char2 = this.physics.add.sprite(400, 500, 'char2'); // Adjust position as needed
+      this.char2.setGravityY(300); // Adjust scale as needed
+      this.char2.setDisplaySize(70, 80);
+
 
       //  create the starting road
       let start_road = this.physics.add.sprite(260,1047,'starting-road')
@@ -280,6 +287,10 @@ class FirstScene extends Phaser.Scene{
       this.physics.add.collider(this.watergirlSprite,road7obst)
 
       // collidere handeling
+        const   points = this.sound.add('points');
+
+
+
 
       this.physics.add.collider(this.watergirlSprite, obstacle_water, this.handleCollision, null, this);
       this.physics.add.collider(this.watergirlSprite, obstacle_fire, this.handleCollision, null, this);
@@ -293,7 +304,32 @@ class FirstScene extends Phaser.Scene{
       this.physics.add.collider(this.watergirlSprite, fireobst_3, this.removeObstacle, null, this);
       this.physics.add.collider(this.watergirlSprite, waterobst_3, this.removeObstacle, null, this);
 
-        
+      
+      // Set collision between char2 and starting road
+      this.physics.add.collider(this.char2,start_road)
+      this.physics.add.collider(this.char2,road_after_fire)
+      this.physics.add.collider(this.char2,road_after_water)
+      this.physics.add.collider(this.char2,road1)
+      this.physics.add.collider(this.char2,road2)
+      this.physics.add.collider(this.char2,road3)
+      this.physics.add.collider(this.char2,road4)
+      this.physics.add.collider(this.char2,end_road)
+     
+
+      // collidere handeling
+
+      this.physics.add.collider(this.char2, obstacle_water, this.handleCollision, null, this);
+      this.physics.add.collider(this.char2, obstacle_fire, this.handleCollision, null, this);
+      this.physics.add.collider(this.char2, road2obst, this.handleCollision, null, this);
+      this.physics.add.collider(this.char2, road3obst, this.handleCollision, null, this);
+      this.physics.add.collider(this.char2, road7obst, this.handleCollision, null, this);
+      this.physics.add.collider(this.char2, fireobst_1, this.removeObstacle, null, this);
+      this.physics.add.collider(this.char2, waterobst_1, this.removeObstacle, null, this);
+      this.physics.add.collider(this.char2, fireobst_2, this.removeObstacle, null, this);
+      this.physics.add.collider(this.char2, waterobst_2, this.removeObstacle, null, this);
+      this.physics.add.collider(this.char2, fireobst_3, this.removeObstacle, null, this);
+      this.physics.add.collider(this.char2, waterobst_3, this.removeObstacle, null, this);
+
     
 
       
@@ -304,6 +340,9 @@ class FirstScene extends Phaser.Scene{
        // listen for a keydown event specifically for the 'UP' arrow key 
        this.input.keyboard.on('keydown-UP',this.jump,this)
 
+       this.input.keyboard.on('keydown-W', this.jumpChar2, this);
+       this.input.keyboard.on('keydown-A', this.moveLeftChar2, this);
+       this.input.keyboard.on('keydown-D', this.moveRightChar2, this);
 
        
     
@@ -311,8 +350,10 @@ class FirstScene extends Phaser.Scene{
         // function to play the audio file and loop it
           const music = this.sound.add('music');
                 music.play({
-                    loop: true
-                });
+                    
+                    loop:false
+
+                    });
 
            
         
@@ -341,6 +382,13 @@ class FirstScene extends Phaser.Scene{
         } else {
             this.watergirlSprite.setVelocityX(0); // Stop horizontal movement
         }
+        if (this.input.keyboard.addKey('A').isDown) {
+            this.char2.setVelocityX(-speed); // Move left
+        } else if (this.input.keyboard.addKey('D').isDown) {
+            this.char2.setVelocityX(speed); // Move right
+        } else {
+            this.char2.setVelocityX(0); // Stop horizontal movement
+        }
         
    
     }
@@ -348,7 +396,7 @@ class FirstScene extends Phaser.Scene{
     jump() {
         const jumpHeight = -300; // Adjust jump height as needed
         const jumpMusic = this.sound.add('jumpMusic');
-        jumpMusic.play();
+        jumpMusic.play(); // will add music, check line b4
         // Vertical movement (jumping)
         if (this.watergirlSprite.body.onFloor()) { // Check if on the ground
             this.watergirlSprite.setVelocityY(jumpHeight); // Jump velocity
@@ -365,6 +413,30 @@ class FirstScene extends Phaser.Scene{
         //obstacle.disableBody(true, true); // Disable and hide the obstacle
         // Optionally, you can destroy the obstacle instead of just disabling it
         obstacle.destroy();
+    }
+    removeObstacle(watergirlSprite, obstacle) {
+        //obstacle.disableBody(true, true); // Disable and hide the obstacle
+        // Optionally, you can destroy the obstacle instead of just disabling it
+        obstacle.destroy();
+    }
+
+    jumpChar2() {
+        const jumpHeight = -300; // Adjust jump height as needed
+        
+        // Vertical movement (jumping) for Alien
+        if (this.char2.body.onFloor()) { // Check if on the ground
+            this.char2.setVelocityY(jumpHeight); // Jump velocity
+        }
+    }
+    
+    moveLeftChar2() {
+        const speed = 300;
+        this.char2.setVelocityX(-speed); // Move left
+    }
+
+    moveRightChar2() {
+        const speed = 300;
+        this.char2.setVelocityX(speed); // Move right
     }
 
 
