@@ -218,9 +218,9 @@
 //       line(x1, y1, x1 - 10, y1 + 10); // Hair strands on the left
 //       line(x2, y2, x2 + 10, y2 + 10); // Hair strands on the right
 //     }
-  }
+  
 //   
-}
+
 const robot = function() {
 
   function setup() {

@@ -1,3 +1,8 @@
+import SecondScene from "./secondScene.js";
+
+const secondScene = new SecondScene()
+
+
 
 // class FirstScene extends Phaser.Scene{
 //     constructor(){
@@ -14,14 +19,14 @@
         // Main characters
         //check if character image is found
         if (robotURL) {
-            // Load the image from the data URL
+            // Load the image from the data URLsdfsdfs
             this.load.image('watergirl', './images/main-characters/robot.png');
           } else {
             console.error('No image URL found in localStorage');
           }
 
         // Background imports
-        this.load.image('map','images/backgrounds/space.png')
+        this.load.image('map','images/backgrounds/space.jpg')
 
         this.load.image('char2','images/main-characters/char.png')
 
@@ -318,6 +323,7 @@
       this.physics.add.collider(this.watergirlSprite, waterobst_2, this.removeObstacle, null, this);
       this.physics.add.collider(this.watergirlSprite, fireobst_3, this.removeObstacle, null, this);
       this.physics.add.collider(this.watergirlSprite, waterobst_3, this.removeObstacle, null, this);
+      this.physics.add.collider(this.watergirlSprite, door, this.transSecondScene, null, this);
 
       
       // Set collision between char2 and starting road
@@ -344,6 +350,7 @@
       this.physics.add.collider(this.char2, waterobst_2, this.removeObstacle, null, this);
       this.physics.add.collider(this.char2, fireobst_3, this.removeObstacle, null, this);
       this.physics.add.collider(this.char2, waterobst_3, this.removeObstacle, null, this);
+      this.physics.add.collider(this.char2, door, this.transSecondScene, null, this);
 
     
 
@@ -443,6 +450,11 @@
         if (this.char2.body.onFloor()) { // Check if on the ground
             this.char2.setVelocityY(jumpHeight); // Jump velocity
         }
+       
+    }
+    transSecondScene(){
+            
+        this.scene.start('secondScene')
     }
     
     moveLeftChar2() {
