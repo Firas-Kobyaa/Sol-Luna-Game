@@ -1,19 +1,21 @@
 
-
+import SecondScene from "./secondScene.js";
 import FirstScene from "./firstScene.js";
 
 const firstScene = new FirstScene()
+
 // game Scene
 let config = {
     type: Phaser.AUTO,
     width: 1920,
     height: 1080,
     backgroundColor: '#ffffff',
+    scene: [FirstScene, SecondScene],
     
     physics :{
         default:'arcade',
         arcade :{
-            debug : true
+            debug : false
         },
     },
     
@@ -30,6 +32,7 @@ let config = {
 
 
 
+    
 const game = new Phaser.Game(config);
 console.log(game)
 game.scene.add('firstScene',firstScene)
@@ -50,6 +53,8 @@ document.getElementById('startButton').addEventListener('click', function() {
 
     game.scene.start('firstScene')
 });
+
+
 
 
 

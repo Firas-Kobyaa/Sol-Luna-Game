@@ -22,7 +22,7 @@ class SecondScence extends Phaser.Scene{
 
 
         // Background imports
-        this.load.image('map','images/backgrounds/space.png')
+        this.load.image('map','images/backgrounds/space.jpg')
 
        
 
@@ -297,7 +297,7 @@ class SecondScence extends Phaser.Scene{
       this.physics.add.collider(this.watergirlSprite, waterobst_2, this.removeObstacle, null, this);
       this.physics.add.collider(this.watergirlSprite, fireobst_3, this.removeObstacle, null, this);
       this.physics.add.collider(this.watergirlSprite, waterobst_3, this.removeObstacle, null, this);
-
+      this.physics.add.collider(this.watergirlSprite, door, this.endGame, null, this);
 
        // Set collision between char2 and starting road
        this.physics.add.collider(this.char2,start_road)
@@ -322,7 +322,7 @@ class SecondScence extends Phaser.Scene{
       this.physics.add.collider(this.char2, waterobst_2, this.removeObstacle, null, this);
       this.physics.add.collider(this.char2, fireobst_3, this.removeObstacle, null, this);
       this.physics.add.collider(this.char2, waterobst_3, this.removeObstacle, null, this);
-
+      this.physics.add.collider(this.char2, door, this.endGame, null, this);
         
     
 
@@ -342,10 +342,7 @@ class SecondScence extends Phaser.Scene{
     
         
         // function to play the audio file and loop it
-          const music = this.sound.add('music');
-                music.play({
-                    loop: true
-                });
+         
 
            
         
@@ -373,6 +370,13 @@ class SecondScence extends Phaser.Scene{
             this.watergirlSprite.setVelocityX(speed); // Move right
         } else {
             this.watergirlSprite.setVelocityX(0); // Stop horizontal movement
+        }
+        if (this.input.keyboard.addKey('A').isDown) {
+            this.char2.setVelocityX(-speed); // Move left
+        } else if (this.input.keyboard.addKey('D').isDown) {
+            this.char2.setVelocityX(speed); // Move right
+        } else {
+            this.char2.setVelocityX(0); // Stop horizontal movement
         }
         
    
@@ -418,6 +422,9 @@ class SecondScence extends Phaser.Scene{
     moveRightChar2() {
         const speed = 300;
         this.char2.setVelocityX(speed); // Move right
+    }
+    endGame(){
+        this.handleCollision()
     }
 
 
